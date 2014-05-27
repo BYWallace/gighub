@@ -55,6 +55,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.23.0)
+    groupdate (2.1.1)
+      activerecord (>= 3.0.0)
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
@@ -178,6 +180,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker
+  groupdate
   httparty
   jbuilder (~> 2.0)
   jquery-rails

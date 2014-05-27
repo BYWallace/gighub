@@ -1,1 +1,14 @@
 <h1>GigHub</h1>
+
+  <h2>Calendar of Events</h2>
+
+  <% @event_days.sort.each do |day, events| %>
+    <h3><%= day.strftime("%D") %></h3>
+    <% for event in events %>
+      <div class="listing">
+        <%= event.title %>
+        <%= event.venue.name %>
+        <%= event.datetime_local %>
+      </div>
+    <% end %>
+  <% end %>
