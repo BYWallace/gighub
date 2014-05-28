@@ -18,6 +18,7 @@ class Event < ActiveRecord::Base
         lowest_price: event["lowest_price"],
         popularity: event["score"],
         venue_id: Venue.find_by(seatgeek_id: event["venue"]["id"]).id
+        binding.pry
       )
     end
   end
