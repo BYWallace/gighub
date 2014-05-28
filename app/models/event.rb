@@ -4,7 +4,6 @@ class Event < ActiveRecord::Base
   validates :seatgeek_id, uniqueness: true
   validates :title, presence: true
   validates :datetime_local, presence: true
-  validates :lowest_price, presence: true
   validates :popularity, presence: true
   validates :venue_id, presence: true
 
@@ -19,7 +18,7 @@ class Event < ActiveRecord::Base
         popularity: event["score"]
         # venue_id: (Venue.find_by(seatgeek_id: event["venue"]["id"]).id)
       )
-      event.venue = Venue.find_by(seatgeek_id: event["venue"]["id"])
+      event.venue = Venue.find_by(seatgeek_id: event["venue"]["id"]) if event["venue"]
       event.save
     end
   end
