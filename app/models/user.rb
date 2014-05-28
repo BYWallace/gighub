@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
-  has_many :devents, through: :favorites
+  has_many :events, through: :favorites
 
   # Add handlers to run while creating and saving
   before_create :create_remember_token
@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   # Validate name:
   validates :name,
+    presence: true,
+    uniqueness: { case_sensitive: false }
+
+  validates :email,
     presence: true,
     uniqueness: { case_sensitive: false },
     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i  }
