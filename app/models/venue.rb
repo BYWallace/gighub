@@ -11,7 +11,7 @@ class Venue < ActiveRecord::Base
   validates :longitude, numericality: true
 
   def self.generate_list
-    response = HTTParty.get("http://api.seatgeek.com/2/venues?geoip=50.200.196.50&range=25mi&per_page=524")["venues"]
+    response = HTTParty.get("http://api.seatgeek.com/2/venues?geoip=50.200.196.50&range=25mi&per_page=600")["venues"]
     response.each do |venue|
       Venue.create(
         seatgeek_id: venue["id"],
