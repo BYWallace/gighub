@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
         title: event["title"],
         datetime_local: event["datetime_local"],
         lowest_price: event["lowest_price"],
-        popularity: event["score"]
+        popularity: event["score"],
         venue_id: Venue.find_by(seatgeek_id: event["venue"]["id"]).id
       )
       # event.venue = Venue.find_by(seatgeek_id: event["venue"]["id"]) if event["venue"]
