@@ -2,10 +2,15 @@
 
   <h2>Calendar of Events</h2>
 
-  <% @events.each do |event| %>
-      <div class="listing">
-        <%= event.title %>
-        <%= link_to event.venue.name, venue_path(event.venue) %>
-        <%= event.datetime_local %>
-      </div>
+  <% @events_grouped.each do |date, events| %>
+    <div class ="date">
+      <h3><%= date %></h3>
+      <% events.each do |event| %>
+        <div class="listing">
+          <%= event.title %>
+          <%= link_to event.venue.name, venue_path(event.venue) %>
+          <%= event.datetime_local.strftime("%l:%M%p") %>
+        </div>
+    </div>
+      <% end %>
   <% end %>
