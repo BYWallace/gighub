@@ -1,14 +1,14 @@
 class Venue < ActiveRecord::Base
   has_many :events, dependent: :destroy
 
-  validates :seatgeek_id, uniqueness: true
-  validates :name, presence: true
-  validates :address, presence: true
-  validates :city, presence: true
-  validates :state, length: { minimum: 2 }
-  validates :postal_code, presence: true
-  validates :latitude, numericality: true
-  validates :longitude, numericality: true
+  # validates :seatgeek_id, uniqueness: true
+  # validates :name, presence: true
+  # validates :address, presence: true
+  # validates :city, presence: true
+  # validates :state, length: { minimum: 2 }
+  # validates :postal_code, presence: true
+  # validates :latitude, numericality: true
+  # validates :longitude, numericality: true
 
   def self.generate_list
     response = HTTParty.get("http://api.seatgeek.com/2/venues?geoip=50.200.196.50&range=30mi&per_page=1000")["venues"]
