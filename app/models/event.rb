@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   def self.generate_list
     response = HTTParty.get("http://api.seatgeek.com/2/events?geoip=50.200.196.50&range=25mi&per_page=1000&type=concert")["events"]
     response.each do |event|
+      binding.pry
       Event.create(
         seatgeek_id: event["id"],
         title: event["title"],
