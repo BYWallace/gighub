@@ -41,9 +41,10 @@ gem 'groupdate'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-rails'
+gem 'awesome_print'
+
 group :development, :test do
-  gem 'pry-rails'
-  gem 'awesome_print'
   gem 'rspec-rails', '~> 2.14.0'
   gem 'shoulda-matchers'
   gem 'capybara'
