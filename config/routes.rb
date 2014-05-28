@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
   end
 
+  resources :venues, only: [:show]
+
   resources :sessions, only: [:create]
 
    get "/signup" => "users#new"
