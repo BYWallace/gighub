@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def favorite(event)
-    # TODO
+    events << event
   end
 
   private

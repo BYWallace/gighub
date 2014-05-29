@@ -5,9 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root "welcome#index"
 
-   resources :users, except: [:index] do
-    resources :favorites, only: [:index]
+   resources :events, only: [:show] do
+    resources :favorites, only: [:create, :destroy]
   end
+
+   resources :users, except: [:index] do
+    resources :events, only: [:index]
+  end
+
+    # resources :events, only: [:show] do
+    #   resources :favorites, only: [:create]
+    # end
 
   resources :venues, only: [:show]
 

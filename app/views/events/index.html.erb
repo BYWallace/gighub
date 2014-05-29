@@ -1,5 +1,4 @@
-
-<h1>Calendar of Events</h1>
+<h1>Personal Calendar</h1>
 
   <% @events_grouped.each do |date, events| %>
     <div class ="date">
@@ -10,10 +9,10 @@
           <%= link_to event.venue.name, venue_path(event.venue) %>
           <%= event.datetime_local.strftime("%l:%M%p") %>
           <% if signed_in? %>
-            <%= form_tag(event_favorites_path(event), method: :post) do %>
-              <%= submit_tag "Favorite" %>
-              <% end %>
+            <%= form_tag(event_favorite_path(current_user, event.id), method: :delete) do %>
+              <%= submit_tag "Delete" %>
             <% end %>
+          <% end %>
         </div>
     </div>
       <% end %>

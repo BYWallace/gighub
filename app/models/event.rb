@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :venue
+  has_many :favorites
+  has_many :users, through: :favorites
 
   # validates :seatgeek_id, uniqueness: true
   # validates :title, presence: true
