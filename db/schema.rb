@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529134955) do
+ActiveRecord::Schema.define(version: 20140529135858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140529134955) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "photo_url"
+    t.text     "spotify_url"
   end
 
   add_index "events", ["seatgeek_id"], name: "index_events_on_seatgeek_id", unique: true, using: :btree

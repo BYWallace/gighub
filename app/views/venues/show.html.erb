@@ -9,6 +9,7 @@
           <%= event.title %>
           <%= link_to event.venue.name, venue_path(event.venue) %>
           <%= event.datetime_local.strftime("%l:%M%p") %>
+          <iframe src="https://embed.spotify.com/?uri=<%= event.spotify_url %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
         </div>
     </div>
       <% end %>

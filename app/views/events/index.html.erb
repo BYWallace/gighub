@@ -5,14 +5,15 @@
       <h3><%= date %></h3>
       <% events.each do |event| %>
         <div class="listing">
+          <% if signed_in? %>
+            <%= form_tag(event_favorite_path(current_user, event.id), method: :delete) do %>
+              <%= submit_tag "Delete", class: "button" %>
+            <% end %>
+          <% end %>
           <%= event.title %>
           <%= link_to event.venue.name, venue_path(event.venue) %>
           <%= event.datetime_local.strftime("%l:%M%p") %>
-          <% if signed_in? %>
-            <%= form_tag(event_favorite_path(current_user, event.id), method: :delete) do %>
-              <%= submit_tag "Delete" %>
-            <% end %>
-          <% end %>
+          <iframe src="https://embed.spotify.com/?uri=<%= event.spotify_url %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
         </div>
     </div>
       <% end %>

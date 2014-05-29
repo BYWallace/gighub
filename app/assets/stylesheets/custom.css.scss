@@ -1,5 +1,4 @@
 body {
-  border: 1px solid red;
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   width: 800px;
@@ -27,6 +26,7 @@ body {
   }
 
   .navbar {
+    border: 2px solid black;
     left: 1px;
     position: fixed;
     top: 200px;
@@ -34,13 +34,48 @@ body {
     ul {
 
       li {
+        right: 20px;
         list-style-type: none;
         padding: 25px 0;
+        position: relative;
       }
     }
   }
 
   .listing {
+
+    iframe {
+      float: right;
+      height: 75px;
+      position: relative;
+      bottom: 30px;
+    }
+
+    img {
+      float: right;
+      height: 75px;
+      position: relative;
+      bottom: 30px;
+    }
+
+    input {
+      bottom: 40px;
+      right: 40px;
+      position: relative;
+      background-color: #ccc;
+      color: #fff;
+      font-size: 20px;
+      height: 100px;
+      text-decoration: none;
+      cursor: pointer;
+      border:none;
+
+      &:hover {
+        border: none;
+        background:black;
+        box-shadow: 0px 0px 1px #777;
+      }
+    }
 
   }
 }
