@@ -2,17 +2,24 @@
 <html>
 <head>
   <title>GigHub</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+  <div class="banner" role="banner">
+    <h1>GigHub</h1>
+  </div>
 
-<h1>GigHub</h1>
-
-<%= link_to "Home", root_path %>
-<%= render "common/signout" %>
-<%= yield %>
-
+  <div class="navbar" role="navigation">
+  <ul>
+    <li><%= link_to "Upcoming", root_path %></li>
+    <%= render "common/signout" %>
+  </ul>
+  </div>
+    <%= yield %>
+</div>
 </body>
 </html>

@@ -1,14 +1,20 @@
 <% if signed_in? %>
 
-  <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
-    Signed in as <%= link_to current_user.name, current_user %>
-    <%= f.submit "Sign Out", id: 'signout' %>
-  <% end %>
+  <li>
+    <%= link_to "Personal Calendar", user_events_path(current_user) %>
+  </li>
 
-  <%= link_to "My Favorites", user_events_path(current_user) %>
+  <li>
+    <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
+      Signed in as <%= link_to current_user.name, current_user %>
+      <%= f.submit "Sign Out", id: 'signout' %>
+    <% end %>
+  </li>
 
 <% else %>
 
-  <%= link_to "Sign In", signin_path %> | <%= link_to "Sign Up", signup_path %>
+  <li>
+    <%= link_to "Sign In", signin_path %> | <%= link_to "Sign Up", signup_path %>
+  </li>
 
 <% end %>

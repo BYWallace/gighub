@@ -1,0 +1,40 @@
+body {
+  border: 1px solid red;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  width: 800px;
+
+  .banner {
+    font-size: 72px;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .listing {
+    border-bottom: 1px solid black;
+    padding: 50px;
+
+    input {
+      float: left;
+    }
+  }
+
+  .navbar {
+    text-align: center;
+
+    ul {
+
+      li {
+        display: inline-block;
+        padding: 0 15px;
+      }
+    }
+  }
+
+  .listing {
+
+  }
+}
