@@ -8,17 +8,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <div class="banner" role="banner">
-    <h1>GigHub</h1>
-  </div>
-
   <div class="navbar" role="navigation">
   <ul>
     <li><%= link_to "Upcoming", root_path %></li>
     <%= render "common/signout" %>
   </ul>
   </div>
+<div class="container">
+  <div class="banner" role="banner">
+    <h1>GigHub</h1>
+  </div>
+
     <%= yield %>
 </div>
 </body>

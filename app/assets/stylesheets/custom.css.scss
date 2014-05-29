@@ -4,6 +4,10 @@ body {
   margin: 0 auto;
   width: 800px;
 
+  h1 {
+    text-align: center;
+  }
+
   .banner {
     font-size: 72px;
     text-align: center;
@@ -23,13 +27,15 @@ body {
   }
 
   .navbar {
-    text-align: center;
+    left: 1px;
+    position: fixed;
+    top: 200px;
 
     ul {
 
       li {
-        display: inline-block;
-        padding: 0 15px;
+        list-style-type: none;
+        padding: 25px 0;
       }
     }
   }

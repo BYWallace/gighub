@@ -1,7 +1,8 @@
 
+<h1><%= @events.count %> upcoming concerts </h1>
   <% @events_grouped.each do |date, events| %>
     <div class ="date">
-      <h1><%= date %></h1>
+      <h2><%= date %></h2>
       <% events.each do |event| %>
         <div class="listing">
           <% if signed_in? %>
