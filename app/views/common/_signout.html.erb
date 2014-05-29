@@ -5,9 +5,6 @@
   </li>
 
   <li>
-    Signed in as <%= link_to current_user.name, current_user %>
-  </li>
-  <li>
     <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
       <%= f.submit "Sign Out", id: 'signout' %>
     <% end %>
@@ -16,7 +13,11 @@
 <% else %>
 
   <li>
-    <%= link_to "Sign In", signin_path %> | <%= link_to "Sign Up", signup_path %>
+    <%= link_to "Sign In", signin_path %>
+  </li>
+
+  <li>
+    <%= link_to "Sign Up", signup_path %>
   </li>
 
 <% end %>

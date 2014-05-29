@@ -1,5 +1,5 @@
 
-<h1><%= @events.count %> upcoming concerts </h1>
+<p class="daterange"><%= @events.count %> concerts in 30 days. All in one place. </p>
   <% @events_grouped.each do |date, events| %>
     <div class ="date">
       <h2><%= date %></h2>
@@ -7,7 +7,7 @@
         <div class="listing">
           <% if signed_in? %>
             <%= form_tag(event_favorites_path(event), method: :post) do %>
-              <%= submit_tag "+" %>
+              <%= submit_tag "+", class: "favorite" %>
               <% end %>
             <% end %>
           <span class="event"><%= link_to event.title, event.seatgeek_url %></span><br>

@@ -9,12 +9,19 @@ body {
   }
 
   .banner {
-    font-size: 72px;
+    font-size: 62px;
     text-align: center;
 
     h1 {
       margin: 0;
     }
+
+  }
+
+  .daterange {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 50px;
   }
 
   .date {
@@ -33,21 +40,55 @@ body {
   }
 
   .navbar {
-    background-color: white;
-    border-radius: 10px 40px 40px 10px;
-    box-shadow: 0px 0px 1px #777;
+    // background-color: white;
+    // border-radius: 10px 40px 40px 10px;
+    // box-shadow: 0px 0px 1px #777;
     left: 10px;
     position: fixed;
     top: 200px;
     width: 15%;
 
+    a {
+      background-color: #A2A9AF;
+      color: black;
+      text-decoration: none;
+    }
+
+    input {
+        border-radius: 5px 0 0 5px;
+        background-color: #A2A9AF;
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
+        border:none;
+      }
+
     ul {
 
       li {
+        background-color: #A2A9AF;
+        border: 10px solid #A2A9AF;
+        border-radius: 5px;
+        margin: 5px 0;
         right: 20px;
         list-style-type: none;
-        padding: 25px 0;
         position: relative;
+        text-align: center;
+        -webkit-transform: scale(1,1);
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-duration: 250ms;
+        -moz-transform: scale(1,1);
+        -moz-transition-timing-function: ease-out;
+        -moz-transition-duration: 250ms;
+
+        &:hover {
+          -webkit-transform: scale(1.05,1.07);
+          -webkit-transition-timing-function: ease-out;
+          -webkit-transition-duration: 250ms;
+          -moz-transform: scale(1.05,1.07);
+          -moz-transition-timing-function: ease-out;
+          -moz-transition-duration: 250ms;
+        }
       }
     }
   }
@@ -57,49 +98,110 @@ body {
     border-radius: 5px;
     margin: 5px 0;
     min-height: 40px;
-
-    a {
-      text-decoration: none;
-    }
-
-    iframe {
-      float: right;
-      height: 75px;
-      position: relative;
-      bottom: 30px;
-    }
-
-    img {
-      float: right;
-      height: 80px;
-      position: relative;
-      bottom: 43px;
-    }
-
-    input {
-      border-radius: 5px 0 0 5px;
-      bottom: 25px;
-      right: 27px;
-      position: relative;
-      background-color: #ccc;
-      color: #fff;
-      font-size: 20px;
-      height: 97px;
-      text-decoration: none;
-      cursor: pointer;
-      border:none;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
 
       &:hover {
-        border: none;
-        background:black;
-        box-shadow: 0px 0px 1px #777;
+        -webkit-transform: scale(1.05,1.07);
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-duration: 250ms;
+        -moz-transform: scale(1.05,1.07);
+        -moz-transition-timing-function: ease-out;
+        -moz-transition-duration: 250ms;
       }
-    }
 
-    .event{
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
+      .unfavorite {
+        input {
+        border-radius: 5px 0 0 5px;
+        bottom: 25px;
+        right: 27px;
+        position: relative;
+        background-color: #A2A9AF;
+        color: #fff;
+        font-size: 20px;
+        height: 97px;
+        text-decoration: none;
+        cursor: pointer;
+        border:none;
 
+          &:hover {
+            border: none;
+            background: #ee3b3b;
+            box-shadow: 0px 0px 1px #777;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      iframe {
+        float: right;
+        height: 75px;
+        position: relative;
+        bottom: 40px;
+      }
+
+      img {
+        float: right;
+        height: 80px;
+        position: relative;
+        bottom: 43px;
+      }
+
+      input {
+        border-radius: 5px 0 0 5px;
+        bottom: 25px;
+        right: 27px;
+        position: relative;
+        background-color: #A2A9AF;
+        color: #fff;
+        font-size: 20px;
+        height: 97px;
+        text-decoration: none;
+        cursor: pointer;
+        border:none;
+
+        &:hover {
+          border: none;
+          background:#7ccd7c;
+          box-shadow: 0px 0px 1px #777;
+        }
+      }
+
+      .event{
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+  }
+
+  .signup{
+    background-color: white;
+    margin: 45px auto;
+    padding: 10px 50px;
+    width: 150px;
+
+    li {
+      list-style-type: none;
+      margin: 20px auto;
+    }
+  }
+
+  .signin{
+    background-color: white;
+    margin: 45px auto;
+    padding: 10px 50px;
+    width: 150px;
+
+    li {
+      list-style-type: none;
+      margin: 20px auto;
+    }
   }
 }

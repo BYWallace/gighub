@@ -3,10 +3,10 @@ class Event < ActiveRecord::Base
   has_many :favorites
   has_many :users, through: :favorites
 
-  # validates :seatgeek_id, uniqueness: true
-  # validates :title, presence: true
-  # validates :datetime_local, presence: true
-  # validates :venue_id, presence: true
+  validates :seatgeek_id, uniqueness: true
+  validates :title, presence: true
+  validates :datetime_local, presence: true
+  validates :venue_id, presence: true
 
   def self.generate_list
     seatgeek_response = HTTParty.get("http://api.seatgeek.com/2/events?geoip=50.200.196.50&range=25mi&per_page=1000&type=concert")["events"]
