@@ -10,7 +10,7 @@
               <%= submit_tag "+" %>
               <% end %>
             <% end %>
-          <%= event.title %>
+          <span class="event"><%= link_to event.title, event.seatgeek_url %></span><br>
           <%= link_to event.venue.name, venue_path(event.venue) %>
           <%= event.datetime_local.strftime("%l:%M%p") %>
           <img src="<%= event.photo_url %>">

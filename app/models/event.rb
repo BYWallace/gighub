@@ -26,7 +26,8 @@ class Event < ActiveRecord::Base
         popularity: event["score"],
         venue_id: Venue.find_by(seatgeek_id: event["venue"]["id"]).id,
         photo_url: event["performers"].first["image"],
-        spotify_url: spotify_url
+        spotify_url: spotify_url,
+        seatgeek_url: event["url"]
       )
     end
   end
