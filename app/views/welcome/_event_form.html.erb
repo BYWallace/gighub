@@ -1,0 +1,10 @@
+<div class="listing">
+          <% if signed_in? %>
+            <%= form_tag(event_favorites_path(event), method: :post) do %>
+              <%= submit_tag "Favorite" %>
+              <% end %>
+            <% end %>
+          <%= event.title %>
+          <%= link_to event.venue.name, venue_path(event.venue) %>
+          <%= event.datetime_local.strftime("%l:%M%p") %>
+        </div>
