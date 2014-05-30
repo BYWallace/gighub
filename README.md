@@ -34,4 +34,4 @@ A full list of user stories can be found by looking at [this Pivotal Tracker Pro
 
 ### ERD
 
-![](https://github.com/BYWallace/gighub/blob/master/gighub_erd.png "GigHub domain model")
+<img src="/blob/master/gighub_erd.png">
