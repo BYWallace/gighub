@@ -1,15 +1,3 @@
 <h1><%= @venue.name %></h1>
 
-<% @events_grouped.each do |date, events| %>
-    <div class ="date">
-      <h2><%= date %></h2>
-      <% events.each do |event| %>
-        <div class="listing">
-         <span class="event"><%= link_to event.title, event.seatgeek_url %></span><br>
-          <%= link_to event.venue.name, venue_path(event.venue) %>
-          <%= event.datetime_local.strftime("%l:%M%p") %>
-          <iframe src="https://embed.spotify.com/?uri=<%= event.spotify_url %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-        </div>
-    </div>
-      <% end %>
-  <% end %>
+<%= render "common/spotify_listing" %>
