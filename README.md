@@ -13,6 +13,7 @@
 * PostgreSQL 9.3.4
 * Hand-rolled authentication using [bcrypt-ruby](http://bcrypt-ruby.rubyforge.org/)
 * [SeatGeek API](http://platform.seatgeek.com/), [Spotify search API](https://developer.spotify.com/technologies/web-api/search/), and [HTTParty](https://github.com/jnunemaker/httparty)
+* ActionMailer via SendGrid Heroku add-on
 * Testing using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
 
 ### User Stories Completed
@@ -35,3 +36,6 @@ A full list of user stories can be found by looking at [this Pivotal Tracker Pro
 ### ERD
 
 <img src="/blob/master/gighub_erd.png">
+
+***
+Written by Brett Wallace
