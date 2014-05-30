@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  # has_many :favorites, dependent: :destroy
-  # has_many :events, through: :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :events, through: :favorites
 
   # Add handlers to run while creating and saving
   before_create :create_remember_token

@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
     @user = user
-    @url = "http://localhost:3000/signin"
+    @url = "http://gighubdc.herokuapp.com/signin"
     email_with_name = "#{@user.name} <#{@user.email}>"
     mail(to: email_with_name, subject: "Welcome to GigHub")
   end
