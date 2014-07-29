@@ -13,22 +13,27 @@ class Event < ActiveRecord::Base
     seatgeek_response.each do |event|
     spotify_response = HTTParty.get("http://ws.spotify.com/search/1/artist.json?q=#{event["performers"].first["name"].gsub(" ", "+").gsub("&", "and")}")
 
-    if spotify_response["artists"] == []
-      spotify_url = nil
-    else
-      spotify_url = spotify_response["artists"][0]["href"]
-    end
-      new_event = Event.create(
-        seatgeek_id: event["id"],
-        title: event["title"],
-        datetime_local: event["datetime_local"],
-        lowest_price: event["lowest_price"],
-        popularity: event["score"],
-        venue_id: Venue.find_by(seatgeek_id: event["venue"]["id"]).id,
-        photo_url: event["performers"].first["image"],
-        spotify_url: spotify_url,
-        seatgeek_url: event["url"]
-      )
+      if spotify_response["artists"] == []
+        spotify_url = nil
+      else
+        spotify_url = spotify_response["artists"][0]["href"]
+      end
+
+      if Venue.find_by(seatgeek_id: event["venue"]["id"]).id == nil
+        return
+      else
+          Event.create(
+          seatgeek_id: event["id"],
+          title: event["title"],
+          datetime_local: event["datetime_local"],
+          lowest_price: event["lowest_price"],
+          popularity: event["score"],
+          venue_id: Venue.find_by(seatgeek_id: event["venue"]["id"]).id,
+          photo_url: event["performers"].first["image"],
+          spotify_url: spotify_url,
+          seatgeek_url: event["url"]
+        )
+      end
     end
   end
 end
