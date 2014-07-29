@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
   validates :venue_id, presence: true
 
   def self.generate_list
-    seatgeek_response = HTTParty.get("http://api.seatgeek.com/2/events?geoip=50.200.196.50&range=25mi&per_page=1000&type=concert")["events"]
+    seatgeek_response = HTTParty.get("http://api.seatgeek.com/2/events?geoip=50.200.196.50&range=20mi&per_page=1000&type=concert")["events"]
     seatgeek_response.each do |event|
     spotify_response = HTTParty.get("http://ws.spotify.com/search/1/artist.json?q=#{event["performers"].first["name"].gsub(" ", "+").gsub("&", "and")}")
 
